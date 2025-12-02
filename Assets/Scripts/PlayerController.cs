@@ -3,49 +3,34 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float smoothMove = 0.15f;
+    [SerializeField] float smoothMove;
 
-    // lanes
     public const float leftLane1 = -4f;
     public const float leftLane2 = -8f;
     public const float centerLane = 0f;
     public const float rightLane1 = 4f;
     public const float rightLane2 = 8f;
 
-    // touch input
     private Vector2 startTouchPos;
     private Vector2 endTouchPos;
 
-    // rigidbody
     private Rigidbody rb;
 
-    // rotation settings
     private bool rotateLeft = false;
     private bool rotateRight = false;
     [SerializeField] private float smoothRotationSpeed = 0.2f;
     [SerializeField] private float rotationDegY = 15f;
     [SerializeField] private float rotationDegZ = 5f;
+
     private float lrSign;
 
-    // Car move
     [SerializeField] private float moveSpeed = 25f;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.centerOfMass = Vector3.zero;
-            rb.interpolation = RigidbodyInterpolation.Interpolate; // smoother physics visuals
-        }
-
-        // lrSign used for flipping rotation depending on initial X.
-        // If starting exactly at 0, default to -1 so rotation effect remains.
-        float sign = Mathf.Sign(transform.position.x);
-        if (Mathf.Approximately(sign, 0f))
-            lrSign = -1f;
-        else
-            lrSign = -sign; // original intent was -Mathf.Sign(...)
+        rb.centerOfMass = Vector3.zero;
+        lrSign = 1;     // FIXED (not 0 anymore)
     }
 
     void Update()
@@ -55,16 +40,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // forward movement using Rigidbody (keeps physics consistent)
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector3.forward * moveSpeed;
-        }
-        else
-        {
-            // fallback - move transform forward if no rb
-            transform.Translate(Vector3.forward * moveSpeed * Time.fixedDeltaTime, Space.World);
-        }
+        rb.linearVelocity = Vector3.forward * moveSpeed;   // FIXED
     }
 
     void SwipeLeftRight()
@@ -78,55 +54,40 @@ public class PlayerController : MonoBehaviour
         {
             endTouchPos = Input.GetTouch(0).position;
 
-            // left swipe
-            if (endTouchPos.x < startTouchPos.x)
+            float swipeDistX = endTouchPos.x - startTouchPos.x;
+
+            if (Mathf.Abs(swipeDistX) < 30f) return;   // FIXED dead-zone
+
+            if (swipeDistX < 0)
             {
-                if (Mathf.Approximately(transform.position.x, centerLane))
-                {
+                if (Mathf.Abs(transform.position.x - centerLane) < 0.1f)
                     MoveLeft(leftLane1);
-                }
-                else if (Mathf.Approximately(transform.position.x, leftLane1))
-                {
+                if (Mathf.Abs(transform.position.x - leftLane1) < 0.1f)
                     MoveLeft(leftLane2);
-                }
-                else if (Mathf.Approximately(transform.position.x, rightLane2))
-                {
+
+                if (Mathf.Abs(transform.position.x - rightLane2) < 0.1f)
                     MoveLeft(rightLane1);
-                }
-                else if (Mathf.Approximately(transform.position.x, rightLane1))
-                {
+                if (Mathf.Abs(transform.position.x - rightLane1) < 0.1f)
                     MoveLeft(centerLane);
-                }
             }
 
-            // right swipe
-            if (endTouchPos.x > startTouchPos.x)
+            if (swipeDistX > 0)
             {
-                if (Mathf.Approximately(transform.position.x, centerLane))
-                {
+                if (Mathf.Abs(transform.position.x - centerLane) < 0.1f)
                     MoveRight(rightLane1);
-                }
-                else if (Mathf.Approximately(transform.position.x, rightLane1))
-                {
+                if (Mathf.Abs(transform.position.x - rightLane1) < 0.1f)
                     MoveRight(rightLane2);
-                }
-                else if (Mathf.Approximately(transform.position.x, leftLane2))
-                {
+
+                if (Mathf.Abs(transform.position.x - leftLane2) < 0.1f)
                     MoveRight(leftLane1);
-                }
-                else if (Mathf.Approximately(transform.position.x, leftLane1))
-                {
+                if (Mathf.Abs(transform.position.x - leftLane1) < 0.1f)
                     MoveRight(centerLane);
-                }
             }
         }
     }
 
     void MoveLeft(float lane)
     {
-        // using transform DOMoveX as you originally had.
-        // If you want physics-correct movement (so collisions work while lane-changing),
-        // use rb.DOMove(new Vector3(lane, transform.position.y, transform.position.z), smoothMove)
         transform.DOMoveX(lane, smoothMove).OnStart(RotateLeft).OnComplete(RotateLeft);
     }
 
@@ -135,7 +96,7 @@ public class PlayerController : MonoBehaviour
         transform.DOMoveX(lane, smoothMove).OnStart(RotateRight).OnComplete(RotateRight);
     }
 
-    void RotateLeft()
+    void RotateRight()
     {
         if (rotateLeft)
         {
@@ -149,7 +110,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void RotateRight()
+    void RotateLeft()
     {
         if (rotateRight)
         {
