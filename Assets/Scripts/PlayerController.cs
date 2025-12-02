@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         // forward movement using Rigidbody (keeps physics consistent)
         if (rb != null)
         {
-            rb.velocity = Vector3.forward * moveSpeed;
+            rb.linearVelocity = Vector3.forward * moveSpeed;
         }
         else
         {
