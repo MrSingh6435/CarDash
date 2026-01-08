@@ -80,11 +80,6 @@ This project helped me move from basic Unity concepts to **complete mobile game 
 
 > *<img width="600" alt="Image" src="https://github.com/user-attachments/assets/e776befd-8d23-4f3d-bcd4-611aac2fe033" />*  
 >  
-> Recommended:
-> - Start screen  
-> - In-game traffic scene  
-> - Pause countdown  
-> - Game Over screen  
 
 ---
 
