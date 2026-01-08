@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 333563288535958963}
   m_Layer: 0
   m_Name: wheel-back-right
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 7360347980765458805}
   m_Layer: 0
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 7897329333360036389}
   m_Layer: 0
   m_Name: grill
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 7583696226226373653}
   m_Layer: 0
   m_Name: wheel-front-left
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 3615831746125251783}
   m_Layer: 0
   m_Name: wheel-back-left
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 3236987926407999213}
   m_Layer: 0
   m_Name: wheel-front-right
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 2051357443958391916}
   m_Layer: 0
   m_Name: firetruck
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

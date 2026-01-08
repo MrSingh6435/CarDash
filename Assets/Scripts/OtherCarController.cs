@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class OtherCarController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private GameManager gameManager;
+    void Awake()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
-
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            gameManager.GameOver();
+        }
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 802901959177019854}
   m_Layer: 0
   m_Name: wheel-back-right
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 377539848295967228}
   m_Layer: 0
   m_Name: wheel-back-left
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 3732155157982214153}
   m_Layer: 0
   m_Name: wheel-back
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 5663630572327602554}
   m_Layer: 0
   m_Name: suv
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 2105418908428475012}
   m_Layer: 0
   m_Name: wheel-front-left
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 3787834037342202353}
   m_Layer: 0
   m_Name: wheel-front-right
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 5128618257872178547}
   m_Layer: 0
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2242699775163067087}
   m_Layer: 0
   m_Name: door-right
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4659922610155470272}
   m_Layer: 0
   m_Name: ambulance
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 6054298775258699699}
   m_Layer: 0
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 6855255466529322129}
   m_Layer: 0
   m_Name: wheel-back-left
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 5364938814866827181}
   m_Layer: 0
   m_Name: wheel-front-right
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 5560126721726457267}
   m_Layer: 0
   m_Name: wheel-back-right
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 2582370814079973381}
   m_Layer: 0
   m_Name: wheel-front-left
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 2723232238402684692}
   m_Layer: 0
   m_Name: door-left
-  m_TagString: Untagged
+  m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

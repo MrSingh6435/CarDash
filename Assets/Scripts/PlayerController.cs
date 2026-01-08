@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
 
     private float lrSign;
 
+    [SerializeField] private ParticleSystem explosionParticles;
+
+
     [SerializeField] private float moveSpeed = 25f;
 
     void Awake()
@@ -40,11 +43,23 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = Vector3.forward * moveSpeed;   // FIXED
+        if (GameManager.instance != null && !GameManager.instance.isGameOver)
+        {
+            PlayExplosion(false);
+            rb.linearVelocity = Vector3.forward * moveSpeed;   // FIXED
+        }
+        else
+        {
+            PlayExplosion(true);
+        }
     }
 
     void SwipeLeftRight()
     {
+        if (GameManager.instance != null && GameManager.instance.isGameOver)
+        {
+            return;
+        }
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             startTouchPos = Input.GetTouch(0).position;
@@ -121,6 +136,27 @@ public class PlayerController : MonoBehaviour
         {
             transform.DORotate(new Vector3(0, -rotationDegY * lrSign, -rotationDegZ * lrSign), smoothRotationSpeed);
             rotateRight = true;
+        }
+    }
+
+    // Play explosion particles
+    public void PlayExplosion(bool play)
+    {
+        // Check if the particle system reference is set before trying to play it
+        if (explosionParticles != null)
+        {
+            if (play)
+            {
+                explosionParticles.Play();
+            }
+            else
+            {
+                explosionParticles.Stop();
+            }
+        }
+        else
+        {
+            Debug.LogError("Explosion Particles not assigned in the Inspector!");
         }
     }
 }
